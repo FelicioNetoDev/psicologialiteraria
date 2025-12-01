@@ -1223,8 +1223,8 @@
                 padding: 2rem 0;
             }
 
-            /* Ocultar testimonials extras no mobile (mostrar apenas 4) */
-            .testimonial-card:nth-child(n+5) {
+            /* Ocultar testimonials extras no mobile (mostrar apenas 3) */
+            .testimonial-card:nth-child(n+4) {
                 display: none;
             }
 
@@ -1232,12 +1232,12 @@
                 display: block;
             }
 
-            /* Ocultar meses extras da curadoria no mobile (mostrar apenas 6) */
-            .curadoria-section .month-card:nth-child(n+7) {
+            /* Ocultar meses extras da curadoria no mobile (mostrar apenas 3) */
+            .curadoria-section .row > div:nth-child(n+4) {
                 display: none;
             }
 
-            .curadoria-section .month-card.show-mobile {
+            .curadoria-section .row > div.show-mobile {
                 display: block;
             }
 
@@ -1361,6 +1361,147 @@
                 top: 10px;
                 right: 10px;
             }
+
+            /* Melhorias UI/UX Mobile */
+
+            /* Melhorar touch targets para botões */
+            .btn-cta,
+            .btn-cta-secondary {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                min-height: 48px;
+                width: 100%;
+                margin-bottom: 0.75rem;
+            }
+
+            /* Melhorar espaçamento entre elementos de texto */
+            .section-subtitle {
+                margin-bottom: 2rem;
+                line-height: 1.6;
+            }
+
+            /* Melhorar visualização de cards de mês */
+            .month-card {
+                margin-bottom: 1rem;
+            }
+
+            .month-card h3 {
+                font-size: 1.4rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .book-title {
+                font-size: 1.1rem;
+                line-height: 1.5;
+                margin-bottom: 0.5rem;
+            }
+
+            .book-author {
+                font-size: 1rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .book-theme {
+                font-size: 0.9rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            /* Melhorar cards de razões */
+            .reason-item h3 {
+                font-size: 1.3rem;
+                line-height: 1.4;
+                margin-bottom: 1rem;
+            }
+
+            .reason-item p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .reason-number {
+                width: 45px;
+                height: 45px;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            /* Melhorar cards de estrutura */
+            .structure-card h3 {
+                font-size: 1.3rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .structure-card p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .structure-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            /* Melhorar espaçamento de imagens */
+            .manifesto-image,
+            .hero-section img {
+                margin-bottom: 2rem;
+            }
+
+            /* Melhorar área de toque do modal */
+            .testimonial-card {
+                margin-bottom: 1rem;
+                cursor: pointer;
+            }
+
+            .testimonial-overlay {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+
+            /* Melhorar botão ver mais */
+            .view-more-btn {
+                width: 100%;
+                padding: 1rem 2rem;
+                font-size: 1.05rem;
+                margin-top: 1.5rem;
+            }
+
+            /* Melhorar espaçamento da navegação */
+            .navbar-nav {
+                padding: 1rem 0;
+            }
+
+            .navbar-nav .nav-link {
+                padding: 0.75rem 1rem;
+                font-size: 1.05rem;
+            }
+
+            /* Melhorar seção hero */
+            .hero-section {
+                text-align: center;
+            }
+
+            .hero-section .lead {
+                margin-bottom: 2rem;
+                line-height: 1.6;
+            }
+
+            /* Ajustar manifesto highlight para mobile */
+            .manifesto-highlight {
+                padding: 1.5rem;
+                margin: 1.5rem 0;
+            }
+
+            .manifesto-highlight h3 {
+                font-size: 1.15rem;
+            }
+
+            .manifesto-highlight ul li {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
         }
 
         /* Extra small devices (phones, up to 480px) */
@@ -1386,6 +1527,45 @@
             .conversion-bar-badge {
                 font-size: 0.7rem;
                 padding: 0.25rem 0.6rem;
+            }
+
+            /* Ajustes adicionais para telas muito pequenas */
+            .hero-section h1 {
+                font-size: 1.75rem;
+                line-height: 1.3;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+                line-height: 1.3;
+            }
+
+            .month-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .book-title {
+                font-size: 1.05rem;
+            }
+
+            .reason-item h3 {
+                font-size: 1.2rem;
+            }
+
+            .structure-card h3 {
+                font-size: 1.2rem;
+            }
+
+            /* Reduzir padding em containers muito pequenos */
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            /* Melhorar legibilidade de parágrafos */
+            p {
+                font-size: 0.95rem;
+                line-height: 1.6;
             }
         }
 
@@ -2810,7 +2990,7 @@
         const viewMoreTestimonials = document.getElementById('viewMoreTestimonials');
         if (viewMoreTestimonials) {
             viewMoreTestimonials.addEventListener('click', function() {
-                const hiddenTestimonials = document.querySelectorAll('.testimonial-card:nth-child(n+5)');
+                const hiddenTestimonials = document.querySelectorAll('.testimonial-card:nth-child(n+4)');
                 const isExpanded = this.classList.contains('expanded');
 
                 hiddenTestimonials.forEach(testimonial => {
@@ -2832,7 +3012,7 @@
         const viewMoreBooks = document.getElementById('viewMoreBooks');
         if (viewMoreBooks) {
             viewMoreBooks.addEventListener('click', function() {
-                const hiddenBooks = document.querySelectorAll('.curadoria-section .month-card:nth-child(n+7)');
+                const hiddenBooks = document.querySelectorAll('.curadoria-section .row > div:nth-child(n+4)');
                 const isExpanded = this.classList.contains('expanded');
 
                 hiddenBooks.forEach(book => {
